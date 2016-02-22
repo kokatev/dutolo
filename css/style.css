@@ -1,0 +1,293 @@
+body {
+    font-family: 'Lato', sans-serif;
+}
+#logo {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 100%;
+    width: 6em;
+    vertical-align: middle;
+    display: inline-block;
+    height: 45px;
+    line-height: 45px;
+    margin-left: 0.6em;
+    color: #2196F3;
+}
+nav ul button {
+    font-size: 14px;
+    text-decoration: none;
+    color: #2196F3;
+    display: block;
+    letter-spacing: 1px;
+    border: 1px solid black;
+    border-radius: 2px;
+    padding: 6px 9px;
+    transition: 0.4s;
+    background-color: white;
+}
+nav ul button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: 1s;
+    cursor: pointer;
+}
+nav {
+    color: white;
+    border: 1px solid black;
+    height: 45px;
+    max-height: 50px;
+    color: grey;
+    position: fixed;
+    display: block;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+}
+.centerit {
+    display: table;
+    margin: 0px auto;
+}
+ul#horizontal-list {
+    list-style: none;
+    margin-top: 5px;
+    float: right;
+    padding: 5px;
+}
+ul#horizontal-list li {
+    display: inline-block;
+    margin-right: 10px;
+}
+#billArea {
+    top: 46px;
+    border: 1px solid black;
+    max-width: 70%;
+    position: relative;
+    display: block;
+    height: 800px;
+    padding: 8px 8px;
+    margin: 0px auto;
+}
+#bill {
+    height: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+    display: block;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+#bill:hover {
+    border-left: 3px solid #2196F3;
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+    cursor: pointer;
+}
+.delete {
+    display: none;
+}
+#bill:hover .delete {
+    display: inline-table;
+    float: right;
+    vertical-align: middle;
+    color: red;
+    margin-right: 10px;
+    padding: auto;
+    line-height: 45px;
+    ;
+}
+.delete:hover i {
+    text-decoration: underline;
+}
+.date,
+.name,
+.pay,
+.lent,
+.dd,
+.mm {
+    display: inline-block;
+}
+.name {
+    letter-spacing: 0.7px;
+    line-height: 22px;
+    max-width: 70%;
+    min-width: 70%;
+    font-size: 14px;
+    height: 45px;
+    vertical-align: middle;
+    padding-top: 8px;
+}
+.name i {
+    color: grey;
+    font-size: 25px;
+    margin-right: 5px;
+}
+.date {
+    float: left;
+    width: 50px;
+    margin-left: 10px;
+}
+.mm,
+.dd {
+    width: 50px;
+    color: rgba(0, 0, 0, 0.4);
+}
+.mm {
+    font-size: 12px;
+}
+.dd {
+    font-size: 19px;
+}
+.pay,
+.lent {
+    width: 50px;
+    height: 100%;
+    text-align: center;
+    margin-left: 10px;
+}
+.pay::before {
+    content: "You pay";
+    font-size: 10px;
+    color: red;
+}
+.lent::before {
+    content: "You lent";
+    font-size: 10px;
+    color: green;
+}
+.addFriends i {
+    margin-left: 15px;
+    font-size: 18px;
+}
+.addFriends i:hover {
+    color: #F44336;
+}
+#addBillForm,
+#addFriendForm {
+    width: 500px;
+    
+    position: fixed;
+ opacity:0;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    margin: 0px auto;
+    left: 30%;
+    top: 0%;
+	right:-30%;
+    border-radius: 3px;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.4);
+	transition-property: all;
+	transition-duration: 0.6s;
+		transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+		z-index:-1;
+}
+.closeit {
+    float: right;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+    color: white;
+}
+#addBillForm form {
+    font-size: 13px;
+    font-weight: bold;
+    padding: 1px 10px;
+}
+#showdate {
+    margin-left: 35px;
+    color: grey;
+    font-size: 14px;
+    bottom: 20px;
+   
+    font-weight: normal;
+}
+#showdateValue
+{
+	width:135px !important;
+}
+#addBillForm input[type="text"],
+#addFriendForm input[type="text"] {
+    width: 50%;
+    height: 19px;
+    line-height: 19px;
+    padding: 2px 5px;
+    border: none;
+    border-bottom: 1px solid grey;
+    outline: none;
+    margin-left: 10px;
+    margin-bottom: 17px;
+}
+#addBillForm select {
+    width: 100px;
+    height: 19px;
+    line-height: 19px;
+    padding: 2px 5px;
+    border: none;
+    border-bottom: 1px solid grey;
+    outline: none;
+    margin-left: 10px;
+    margin-bottom: 17px;
+}
+.top {
+    height: 25px;
+    padding: 10px 15px;
+    font-size: 20px;
+    color: white;
+    background-color: #2196F3;
+    display: block;
+}
+.rest {
+    padding: 10px 15px;
+    height: 200px;
+}
+#addFriendForm .rest {
+    padding: 10px 15px;
+    height: 100px;
+}
+.bottom {
+    height: 25px;
+    padding: 10px 15px 15px 10px;
+    font-size: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.1);
+    bottom: 0;
+    display: block;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+#mainContainer {
+	transition: all .5s ease-in-out; 
+
+} #amount {
+    max-width: 80px;
+    margin-left: 3px;
+}
+.BillInfo {
+    display: block;
+    letter-spacing: 1px;
+    font-weight: normal;
+    margin-top: 20px;
+    font-size: 16px;
+}
+.bottom button {
+    font-size: 14px;
+    text-decoration: none;
+    color: white;
+    display: block;
+    letter-spacing: 1px;
+    float: right;
+    border: 1px solid black;
+    border-radius: 2px;
+    padding: 6px 9px;
+    background-color: #2196F3;
+}
+.buttonCancel {
+    background-color: grey;
+    color: black;
+    margin-right: 12px;
+}
+.bottom button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: 1s;
+    cursor: pointer;
+}

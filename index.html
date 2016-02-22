@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <title>Bill Manager - Flipkart</title>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <!--[if lte IE 8]><script src="js/ie8.js"></script><![endif]-->
+      <link rel="stylesheet" href="css/reset.css" />
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	  <script src="js/angular.min.js"></script>
+      <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="css/style.css" />
+      <!--[if lte IE 8]>
+      <link rel="stylesheet" href="css/ie8.css" />
+      <![endif]-->
+   </head>
+   <body ng-app="myApp"  ng-controller="MainController">
+      <div id="mainContainer">
+         <nav>
+            <div id="logo"> 
+               <i>BillManager</i>
+            </div>
+            <ul id="horizontal-list" class="centerit">
+               <li class="waves-effect waves-light btn orange lighten-2"><button onclick="addbill()"><i class="fa fa-plus-circle"></i> Add a bill</button></li>
+               <li class="waves-effect waves-light btn orange lighten-2"><button onclick="addFriend();"><i class="fa fa-plus-circle"></i> Add a friend</button></li>
+            </ul>
+         </nav>
+         <!--Bill area-->
+         <div id="billArea">
+
+            <div ng-repeat="product in products" id="bill">
+               <div class="date">
+                  <span class="mm">{{ product.pubdate | date:'MMM' | uppercase}}</span>
+                  <span class="dd">{{ product.pubdate | date:'dd' | uppercase}}</span>
+               </div>
+               <div class="name">
+                  <i class='fa fa-file-text-o'></i>{{ product.desc }}
+               </div>
+               <div class="pay">
+                  <br><i class="fa fa-inr"></i> {{ product.paid }}
+               </div>
+               <div class="lent">
+                  <br><i class="fa fa-inr"></i>{{ product.lent }}
+               </div>
+               <span class="addFriends">
+               <a href="" title="Add friends to this bill"><i class="fa fa-user-plus"></i></a>
+               </span>
+               <span class="delete">
+               <i class="fa fa-times"></i>
+               </span>
+            </div>
+
+         </div>
+
+      </div>
+ 		 <div id="addBillForm" >
+         <div class="top">
+            Add a bill
+            <button class="closeit" onclick="closeBillForm()"><i class="fa fa-times"></i></button>
+         </div>
+         <div class="rest">
+            <form>
+               Description <input type="text" name="billName" id="billName" ng-model="billName" placeholder="e.g. Sunday morning Breakfast."><br>
+               Amount <i class="fa fa-inr" style="padding-left:15px;"></i><input type="text"  name="amount" id="amount" ng-model="amount" placeholder="e.g. 1250"><br>
+               Date <span id="showdate"><input type="date" ng-model="pubdate" placeholder="yyyy-MM-dd" id="showdateValue"/></span>
+               <br>
+               <span class="BillInfo">
+                  Paid by 
+                  <select name="paidBy">
+                     <option >You</option>
+                     <option >Friend1</option>
+                     <option >Friend2</option>
+                  </select>
+                  & distributed equally amongst all.
+               </span>
+         </div>
+         <div class="bottom">
+         <button ng-click="saveBillForm($index)">SAVE</button>
+         <button onclick="closeBillForm()" class="buttonCancel">CANCEL</button>
+         </div>
+         </form>
+      </div>
+      <div id="addFriendForm">
+         <div class="top">
+            Add a new friend
+            <button class="closeit" onclick="closeFriendForm()"><i class="fa fa-times"></i></button>
+         </div>
+         <div class="rest">
+            <form>
+               Friend's Email <input type="text" name="billName" id="billName" placeholder="e.g. something@some.com"><br>
+               Friend's name <input type="text" name="billName" id="billName" placeholder="e.g. Mihir Seth"><br>
+               <br>
+         </div>
+         <div class="bottom">
+         <button onclick="closeBillForm()">SAVE</button>
+         <button onclick="closeFriendForm()" class="buttonCancel">CANCEL</button>
+         </div>
+         </form>
+      </div>
+      <!--Script required-->
+      <script src="js/mainscript.js"></script>
+	  <!-- Modules -->
+    <script src="js/app.js"></script>
+
+    <!-- Controllers -->
+    <script src="js/controllers/MainController.js"></script>
+	
+	 <!-- Directives -->
+    <script src="js/directives/appInfo.js"></script>
+   </body>
+</html>
